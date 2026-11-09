@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Usuarios" language="groovy" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="32cd9c67-6b01-4526-ac28-cd1edb22a769">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="7"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT
+     usuarios.`id_usuario` AS usuarios_id_usuario,
+     usuarios.`nombre` AS usuarios_nombre,
+     usuarios.`edad` AS usuarios_edad,
+     usuarios.`contrasena` AS usuarios_contrasena,
+     usuarios.`nacionalidad` AS usuarios_nacionalidad,
+     usuarios.`id_turno` AS usuarios_id_turno,
+     usuarios.`fecha` AS usuarios_fecha,
+     usuarios.`id_tipo_usuario` AS usuarios_id_tipo_usuario,
+     usuarios.`activo` AS usuarios_activo
+FROM
+     `usuarios` usuarios]]>
+	</queryString>
+	<field name="usuarios_id_usuario" class="java.lang.String"/>
+	<field name="usuarios_nombre" class="java.lang.String"/>
+	<field name="usuarios_edad" class="java.lang.Integer"/>
+	<field name="usuarios_contrasena" class="java.lang.String"/>
+	<field name="usuarios_nacionalidad" class="java.lang.String"/>
+	<field name="usuarios_id_turno" class="java.lang.Integer"/>
+	<field name="usuarios_fecha" class="java.sql.Timestamp"/>
+	<field name="usuarios_id_tipo_usuario" class="java.lang.Integer"/>
+	<field name="usuarios_activo" class="java.lang.Integer"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="252" y="23" width="74" height="33" uuid="bc8f2fe3-aa19-4e4d-8540-dae9cd14b329"/>
+				<textElement>
+					<font size="18"/>
+				</textElement>
+				<text><![CDATA[Usuarios]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="452" y="44" width="100" height="20" uuid="96887456-960f-444a-9270-48138dfbca19"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="27" splitType="Stretch">
+			<staticText>
+				<reportElement x="40" y="2" width="100" height="20" uuid="ad7d25d3-ccd4-4b21-b210-f6fa3f5fd7ea"/>
+				<text><![CDATA[Id]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="169" y="2" width="100" height="20" uuid="7fe37afe-aef5-4c63-9b72-853d4dba82a7"/>
+				<text><![CDATA[Nombre]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="297" y="2" width="100" height="20" uuid="e6dae6fb-c867-41b2-bd13-7190a200812e"/>
+				<text><![CDATA[Edad]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="47" splitType="Stretch">
+			<textField>
+				<reportElement x="40" y="23" width="100" height="20" uuid="fc29a5ab-a01f-43ac-88db-15c2670d8863"/>
+				<textFieldExpression><![CDATA[$F{usuarios_id_usuario}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="169" y="23" width="100" height="20" uuid="6c614497-a5b4-4509-b217-4e0f981fbf10"/>
+				<textFieldExpression><![CDATA[$F{usuarios_nombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="297" y="23" width="100" height="20" uuid="014728b9-fa47-44ab-bd58-4c118e23c486"/>
+				<textFieldExpression><![CDATA[$F{usuarios_edad}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
